@@ -52,6 +52,7 @@ export default {
   box-shadow: 0 2px 2px #ccc;
   background-color: white;
   width: 90%;
+  margin-bottom: 20px;
 }
 
 a {

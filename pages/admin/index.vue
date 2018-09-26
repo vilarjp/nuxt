@@ -5,20 +5,20 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <PostList isAdmin />
+      <PostList :is-admin="true" :posts="loadedPosts"/>
     </section>
   </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
-import AppButton from '@/components/UI/AppButton'
 
 export default {
   layout: 'admin',
-  components: {
-    PostList,
-    AppButton
+  middleware: 'auth',
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
 }
 </script>
